@@ -1,9 +1,12 @@
 ﻿@*引用命名空间*@
 @using WebApplication1.Models;
+@* 创建View的强类型 *@
+@model Employee
 @{
     Layout = null;
     //强制类型转换
-    Employee emp = (Employee)ViewData["EmpKey"];
+    //Employee emp = (Employee)ViewData["EmpKey"];
+    //Employee emp = ViewBag.EmpKey;
 
 }
 
@@ -15,12 +18,26 @@
     <title>MyView</title>
 </head>
 <body>
-    <h1>@emp.Name,@((string)ViewData["greeting"])!</h1>
-    <div> 
+    @*<h1>@emp.Name,@((string)ViewData["greeting"])!</h1>*@
+    <h1>@Model.Name,@ViewBag.greeting </h1>
+
+    <div>
         <h2>员工信息</h2>
         @*获取数据值*@
-        <p>姓名：@emp.Name</p>
-        <p>工资：@emp.Salary.ToString("C")</p>
+        <p>姓名：@Model.Name</p>
+        <p>工资：@Model.Salary.ToString("C")</p>
+        @{
+            if (Model.Salary > 100)
+            {
+                <p> 土豪 </p>
+            }
+            else
+            {
+                <p> 屌丝 </p>
+            }
+
+
+        }
     </div>
 </body>
 </html>

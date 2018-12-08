@@ -17,10 +17,10 @@ namespace WebApplication1.Models
             get;
             set;
         }
-        public override string ToString()
-        {
-            return this.CustomerName + "-" + this.Address;
+        //public override string ToString()
+        //{
+        //    return this.CustomerName + "-" + this.Address;
 
-        }
+        //}
     }
 }
