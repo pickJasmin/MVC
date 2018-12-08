@@ -8,21 +8,10 @@ using WebApplication1.ViewModels;
 
 namespace WebApplication1.Controllers
 {
-    public class TestController : Controller
+    public class EmCuController : Controller
     {
-        public string GetString()
-        {
-            return "Hello!MVC!";
-        }
-        public Customer getCustomer()
-        {
-            Customer ct = new Customer();
-            ct.CustomerName = "hao";
-            ct.Address = "rnrnr";
-            return ct;
-        }
-
-        public ActionResult GetView()
+        // GET: EmCu
+        public ActionResult EnCuView()
         {
             string greeting;
             //获取当前时间
@@ -43,30 +32,40 @@ namespace WebApplication1.Controllers
             //ViewData["greeting"] = greeting;
             ViewBag.greeting = greeting;
 
+
+
             Employee emp = new Employee();
             emp.Name = "潘水荣";
             emp.Salary = 5;
 
-            EmployeeViewModel empM = new EmployeeViewModel();
-            empM.EmployeeName = emp.Name;
-            empM.UserName = "管理员";
+            Customer cu = new Customer();
+            cu.CustomerName = "张三";
+            cu.Address = "柳州";
 
-            empM.EmployeeSalary = emp.Salary.ToString("C");
+            AddViewModel add = new AddViewModel();
+
+            add.CustomerName = cu.CustomerName;
+            add.CustomerAddress = cu.Address;
+
+            add.EmployeeName = emp.Name;
+            add.UserName = "管理员";
+
+            add.EmployeeSalary = emp.Salary.ToString("C");
             if (emp.Salary > 1000)
             {
-                empM.EmployeeGrade = "土豪";
+                add.EmployeeGrade = "土豪";
             }
             else
             {
-                empM.EmployeeGrade = "屌丝";
+                add.EmployeeGrade = "屌丝";
             }
 
+            
 
 
             //ViewData["EmpKey"] = emp;
             //ViewBag.EmpKey = emp;
-            return View("MyView", empM);
-
+            return View("EnCuView", add);
         }
     }
 }

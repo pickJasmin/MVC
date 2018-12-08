@@ -1,0 +1,40 @@
+﻿@*引用命名空间*@
+@using WebApplication1.Models;
+
+@{
+    Layout = null;
+    //强制类型转换
+    Employee emp = (Employee)ViewData["EmpKey"];
+    Customer cu = (Customer)ViewData["CuKey"];
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>IndexView</title>
+</head>
+<body>
+
+    <h1>@emp.Name,@ViewBag.greeting </h1>
+    <div> 
+        <h2>员工信息</h2>
+        @*获取数据值*@
+        <p>姓名：@emp.Name</p>
+        <p>工资：@emp.Salary.ToString("C")</p>
+    </div>
+
+
+
+    <h1>@cu.CustomerName,@ViewBag.greeting </h1>
+    <div>
+        <h2>客户信息</h2>
+        @*获取数据值*@
+        <p>姓名：@cu.CustomerName</p>
+        <p>地址：@cu.Address</p>
+    </div>
+
+</body>
+</html>

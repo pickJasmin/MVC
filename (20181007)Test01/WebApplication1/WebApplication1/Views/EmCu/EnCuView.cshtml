@@ -1,8 +1,7 @@
 ﻿@*引用命名空间*@
 @using WebApplication1.ViewModels;
 @* 创建View的强类型 *@
-@model EmployeeViewModel
-
+@model AddViewModel
 @{
     Layout = null;
     //强制类型转换
@@ -30,5 +29,14 @@
         <p>级别：@Model.EmployeeGrade</p>
     </div>
 
+    <h1>@Model.CustomerName,@ViewBag.Greeting </h1>
+    <div>
+        <h2>客户信息</h2>
+        @*获取数据值*@
+        <p>姓名：@Model.CustomerName</p>
+        <p>地址：@Model.CustomerAddress</p>
+    </div>
+
 </body>
 </html>
+
