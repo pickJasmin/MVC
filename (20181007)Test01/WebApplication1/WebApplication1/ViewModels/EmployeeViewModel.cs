@@ -14,8 +14,8 @@ namespace WebApplication1.ViewModels
         //级别
         public string EmployeeGrade { get; set; }
         //管理员
-        public string UserName { get; set; }
+        //public string UserName { get; set; }
         //问候语
-        public string Greeting { get; set; }
+        //public string Greeting { get; set; }
     }
 }

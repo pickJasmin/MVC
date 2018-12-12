@@ -1,0 +1,26 @@
+﻿@model WebApplication1.ViewModels.EmployeeListViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h2>@Model.UserName,@Model.Greeting</h2>
+    <div>
+        <ul>
+            @foreach (var item in Model.EmployeeList)
+            {
+                <li>@item.EmployeeName,@item.EmployeeGrade,@item.EmployeeSalary</li>
+            }
+        </ul>
+
+    </div>
+</body>
+</html>

@@ -7,12 +7,28 @@ namespace WebApplication1.Models
 {
     public class EmployeeBusinessLayer
     {
-        public List<Employee> GetEmployees()
+        //员工信息业务层
+        public List<Employee> GetEmployeesList()
         {
-            List<Employee> employees = new List<Employee>();
-            Employee emp = new Employee();
+            
+            List<Employee> employeesList = new List<Employee>();
 
-            return employees;
+            Employee emp = new Employee();
+            emp.Name = "张三";
+            emp.Salary = 500;
+            employeesList.Add(emp);
+
+            emp = new Employee();
+            emp.Name = "张四";
+            emp.Salary = 1200;
+            employeesList.Add(emp);
+
+            emp = new Employee();
+            emp.Name = "李三";
+            emp.Salary = 1600;
+            employeesList.Add(emp);
+
+            return employeesList;
         }
     }
 }
