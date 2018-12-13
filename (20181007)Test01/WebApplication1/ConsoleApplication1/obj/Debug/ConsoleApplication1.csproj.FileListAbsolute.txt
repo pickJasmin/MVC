@@ -1,6 +1,6 @@
-D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 D:\漫小画\GitHub本地仓库\MVC\(20181007)Test01\WebApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

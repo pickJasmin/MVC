@@ -11,6 +11,6 @@ namespace WebApplication1.ViewModels
         public string UserName { get; set; }
         //问候语
         public string Greeting { get; set; }
-        public List<EmployeeViewModel> EmployeeList { get; set; }
+        public List<EmployeeViewModel> EmployeeViewList { get; set; }
     }
 }
