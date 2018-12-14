@@ -1,5 +1,6 @@
 ﻿namespace WebApplication1.DataAccessLayer
 {
+    using Models;
     using System;
     using System.Data.Entity;
     using System.Linq;
@@ -17,15 +18,15 @@
         {
         }
 
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Employee>().ToTable("TblEmployee");
+            base.OnModelCreating(modelBuilder);
+        }
         //为您要在模型中包含的每种实体类型都添加 DbSet。有关配置和使用 Code First  模型
         //的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=390109。
-
-        // public virtual DbSet<MyEntity> MyEntities { get; set; }
+        public virtual DbSet<Employee> Employee { get; set; }
     }
-
-    //public class MyEntity
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //}
+    
 }

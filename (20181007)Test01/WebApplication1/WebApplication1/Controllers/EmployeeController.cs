@@ -26,6 +26,10 @@ namespace WebApplication1.Controllers
             //将数据送往视图
             return View(empListModel);
         }
+        public ActionResult AddNew()
+        {
+            return View("CreateEmployee");
+        }
 
         [NonAction]
         List<EmployeeViewModel> getEmpVmList()
