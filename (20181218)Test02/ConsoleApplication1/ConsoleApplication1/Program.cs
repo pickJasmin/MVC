@@ -14,7 +14,8 @@ namespace ConsoleApplication1
         {
             //crateBlog();
             //QueryBlog();
-            Update();
+            //Update();
+            Delete();
             Console.WriteLine("按任意键退出");
             Console.ReadKey();
         }
@@ -49,6 +50,15 @@ namespace ConsoleApplication1
             string name = Console.ReadLine();
             blog.Name = name;
             bbl.Update(blog);
+
+        }
+        static void Delete()
+        {
+            BlogBusinessLayer bbl = new BlogBusinessLayer();
+            Console.WriteLine("请输入一个博客到id");
+            int id = int.Parse(Console.ReadLine());
+            Blog blog = bbl.Query(id);
+            bbl.Delete(blog);
 
         }
     }
