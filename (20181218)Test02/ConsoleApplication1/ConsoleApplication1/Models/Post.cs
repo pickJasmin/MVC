@@ -16,7 +16,7 @@ namespace ConsoleApplication1.Models
         public string Content { get; set; }
         //相当于数据库外码到作用
         public int BlogId { get; set; }
-        //导航属--目的是能够
+        //导航属性--目的是能够
         public virtual Blog Blog { get; set; }
     }
 }

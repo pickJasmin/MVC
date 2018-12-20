@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\BlogBusinessLayer.cs" />
+    <Compile Include="BusinessLayer\PostBusinessLayer.cs" />
     <Compile Include="DataAccessLayer\BloggingContext.cs" />
     <Compile Include="Migrations\201812180855333_InitialCreate.cs" />
     <Compile Include="Migrations\201812180855333_InitialCreate.Designer.cs">
