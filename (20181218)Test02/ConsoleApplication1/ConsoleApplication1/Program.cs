@@ -22,13 +22,14 @@ namespace ConsoleApplication1
             //DeletePost();
             //UpdatePost();
             //DeleteBlogByPost();
+            //OpenBegin();
+            SelectPost();
             Console.WriteLine("按任意键退出");
             Console.ReadKey();
         }
 
-        static void OpenBlog()
+        static void OpenBegin()
         {
-
             Console.WriteLine("\n请选择您要的操作:  1-博客操作   2-帖子操作   3-退出");
             int number = int.Parse(Console.ReadLine());
             if (number == 1)
@@ -38,7 +39,7 @@ namespace ConsoleApplication1
             else if (number == 2)
             {
                 OpenPost();
-                OpenExit();
+                OpenBegin();
             }
             else if (number == 3)
             {
@@ -51,66 +52,110 @@ namespace ConsoleApplication1
             }
             Console.WriteLine("点任意件,退出!");
             Console.Read();
+        }
+
+
+
+        /// <summary>
+        /// 博客的操作
+        /// </summary>
+        static void OpenBlog()
+        {
+            Console.Clear();
+            QueryBlog();
+            Console.WriteLine("\n请选择您要的操作: 1-新增博客   2-修改博客   3-删除博客   4-帖子列表  5-返回");
+            int number = int.Parse(Console.ReadLine());
+            if (number == 1)
+            {
+                CrateBlog();
+                QueryBlog();
+                OpenBegin();
+            }
+            else if (number == 2)
+            {
+                UpdateBlog();
+                QueryBlog();
+                OpenBegin();
+            }
+            else if (number == 3)
+            {
+                Console.WriteLine("\n您是否要删除博客  1-是   2-我在想想");
+                int num = int.Parse(Console.ReadLine());
+                if (num == 1)
+                {
+                    DeleteBlog();
+                    QueryBlog();
+                    OpenBegin();
+                }
+                else if (num == 2)
+                {
+                    OpenBegin();
+                }
+
+            }
+            else if (number == 4)
+            {
+                OpenPost();
+            }
+            else if (number == 5)
+            {
+                OpenBegin();
+            }
+            else
+            {
+                Console.WriteLine("对不起,您输入了无效的操作!");
+            }
 
         }
-        //static void OpenPost()
-        //{
 
-        //    QueryBlog();
-        //    Console.WriteLine("\n请选择您要的操作: 1-新增帖子   2-修改帖子   3-删除帖子   4-返回");
-        //    int number = int.Parse(Console.ReadLine());
-        //    if (number == 1)
-        //    {
-        //        AddPost();
-        //        QueryBlogs();
-        //        Method();
-        //    }
-        //    else if (number == 2)
-        //    {
-        //        Updates();
-        //        QueryBlogs();
-        //        OpenBlog();
-        //    }
-        //    else if (number == 3)
-        //    {
-        //        Delete();
-        //        QueryBlogs();
-        //        OpenBlog();
-        //    }
-        //    else if (number == 4)
-        //    {
-        //        OpenBlog();
-        //    }
 
-        //}
-        //static void OpenExit()
-        //{
-        //    QueryBlogs();
-        //    Console.WriteLine("\n请选择您要的操作: 1-新增帖子   2-修改帖子   3-删除帖子   4-返回");
-        //    int number = int.Parse(Console.ReadLine());
-        //    if (number == 1)
-        //    {
-        //        Createnewposts();
-        //        QueryBlogs();
-        //        OpenBlog();
-        //    }
-        //    else if (number == 2)
-        //    {
-        //        Updates();
-        //        QueryBlogs();
-        //        OpenBlog();
-        //    }
-        //    else if (number == 3)
-        //    {
-        //        Deletes();
-        //        QueryBlogs();
-        //        OpenBlog();
-        //    }
-        //    else if (number == 4)
-        //    {
-        //        OpenBlog();
-        //    }
-        //}
+
+        /// <summary>
+        /// 帖子的操作
+        /// </summary>
+        static void OpenPost()
+        {
+            Console.Clear();
+            CrateBlog();
+            Console.WriteLine("\n请选择您要的操作: 1-新增帖子   2-修改帖子   3-删除帖子   4-返回");
+            int number = int.Parse(Console.ReadLine());
+            if (number == 1)
+            {
+                CratePost();
+                QueryBlog();
+                OpenBlog();
+            }
+            else if (number == 2)
+            {
+                UpdatePost();
+                QueryBlog();
+                OpenBlog();
+            }
+            else if (number == 3)
+            {
+                DeletePost();
+                QueryBlog();
+                OpenBlog();
+            }
+            else if (number == 4)
+            {
+                OpenBlog();
+            }
+        }
+
+
+
+        static void SelectPost()
+        {
+            Console.WriteLine("请输入你要查询的帖子");
+            string name = Console.ReadLine();
+            PostBusinessLayer pbl = new PostBusinessLayer();
+            var query = pbl.SelectPostTitle(name);
+            foreach(var item in query)
+            {
+                Console.WriteLine(item.Title + "    " + item.Content);
+            }
+        }
 
 
 
@@ -173,7 +218,7 @@ namespace ConsoleApplication1
         /// <summary>
         /// 显示添加某个博客的帖子
         /// </summary>
-        static void AddPost()
+        static void CratePost()
         {
             Post post = new Post();
             Console.WriteLine("请用户输入ID");
@@ -261,7 +306,7 @@ namespace ConsoleApplication1
         /// <summary>
         /// 博客增加--交互
         /// </summary>
-        static void crateBlog()
+        static void CrateBlog()
         {
             Console.WriteLine("请输入一个博客名称");
             string name = Console.ReadLine();
@@ -287,7 +332,7 @@ namespace ConsoleApplication1
         /// <summary>
         /// 更改博客
         /// </summary>
-        static void Update()
+        static void UpdateBlog()
         {
             Console.WriteLine("请输入id");
             int id = int.Parse(Console.ReadLine());
@@ -302,7 +347,7 @@ namespace ConsoleApplication1
         /// <summary>
         /// 删除一个博客
         /// </summary>
-        static void Delete()
+        static void DeleteBlog()
         {
             BlogBusinessLayer bbl = new BlogBusinessLayer();
             Console.WriteLine("请输入一个博客到id");

@@ -11,9 +11,17 @@ namespace WebApplication1.Models
         //员工信息业务层
         public List<Employee> GetEmployeesList()
         {
-            SalesERPDAL salesDal = new SalesERPDAL();
-            return salesDal.Employee.ToList();
-            
+            //SalesERPDAL salesDal = new SalesERPDAL();
+            //return salesDal.Employee.ToList();
+            using(SalesERPDAL dal=new SalesERPDAL())
+            {
+                var list = dal.Employee.ToList();
+                return list;
+            }
+
+
+
+
             //List<Employee> employeesList = new List<Employee>();
 
             //Employee emp = new Employee();

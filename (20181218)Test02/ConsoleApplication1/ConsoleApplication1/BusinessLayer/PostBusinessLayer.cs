@@ -44,6 +44,15 @@ namespace ConsoleApplication1.BusinessLayer
 
         }
       
-
+        public List<Post> SelectPostTitle(string title)
+        {
+            using (var db = new BloggingContext())
+            {
+                var query = from p in db.Posts
+                            where p.Title.Contains(title)
+                            select p;
+                return query.ToList();
+            }
+        }
     }
 }
