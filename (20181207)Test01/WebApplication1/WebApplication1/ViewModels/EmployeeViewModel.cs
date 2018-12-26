@@ -7,6 +7,7 @@ namespace WebApplication1.ViewModels
 {
     public class EmployeeViewModel
     {
+        public int EmployeeID { get; set; }
         //名字
         public string EmployeeName { get; set; }
         //工资

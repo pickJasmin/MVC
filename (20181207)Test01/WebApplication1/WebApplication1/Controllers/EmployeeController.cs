@@ -26,11 +26,43 @@ namespace WebApplication1.Controllers
             //将数据送往视图
             return View(empListModel);
         }
+        /// <summary>
+        /// 跳转到新增页面
+        /// </summary>
+        /// <returns></returns>
         public ActionResult AddNew()
         {
             return View("CreateEmployee");
         }
+        /// <summary>
+        /// 添加数据到数据库中
+        /// </summary>
+        /// <param name="emp"></param>
+        /// <returns></returns>
+        public ActionResult SaveEmployee(Employee emp)
+        {
+            EmployeeBusinessLayer eBL = new EmployeeBusinessLayer();
+            eBL.AddSaveEmployee(emp);
+            //跳转到index视图里
+            return new RedirectResult("index");
+        }
 
+        public ActionResult DeleteEmployee(int id)
+        {
+            
+
+            EmployeeBusinessLayer eBL = new EmployeeBusinessLayer();
+            eBL.DeleteSaveEmployee(id);
+            //跳转到index视图里
+            return new RedirectResult("/Employee/index");
+        }
+
+
+
+        /// <summary>
+        /// 返回数据列表
+        /// </summary>
+        /// <returns></returns>
         [NonAction]
         List<EmployeeViewModel> getEmpVmList()
         {
@@ -45,6 +77,7 @@ namespace WebApplication1.Controllers
             foreach (var item in listEmp)
             {
                 EmployeeViewModel empVmObj = new EmployeeViewModel();
+                empVmObj.EmployeeID = item.EmployeeId;
                 empVmObj.EmployeeName = item.Name;
                 empVmObj.EmployeeSalary = item.Salary.ToString("C");
                 if (item.Salary > 1000)
@@ -60,6 +93,10 @@ namespace WebApplication1.Controllers
             return listEmpVm;
         }
 
+        /// <summary>
+        /// 问候语
+        /// </summary>
+        /// <returns></returns>
         [NonAction]
         string getGreeting()
         {
@@ -78,6 +115,10 @@ namespace WebApplication1.Controllers
             }
             return greeting;
         }
+        /// <summary>
+        /// 用户名
+        /// </summary>
+        /// <returns></returns>
         [NonAction]
         string getUserName()
         {

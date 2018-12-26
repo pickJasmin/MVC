@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using WebApplication1.DataAccessLayer;
@@ -13,7 +14,7 @@ namespace WebApplication1.Models
         {
             //SalesERPDAL salesDal = new SalesERPDAL();
             //return salesDal.Employee.ToList();
-            using(SalesERPDAL dal=new SalesERPDAL())
+            using (SalesERPDAL dal = new SalesERPDAL())
             {
                 var list = dal.Employee.ToList();
                 return list;
@@ -40,6 +41,31 @@ namespace WebApplication1.Models
             //employeesList.Add(emp);
 
             //return employeesList;
+        }
+
+        //新增
+        public void AddSaveEmployee(Employee emp)
+        {
+            using (SalesERPDAL dal = new SalesERPDAL())
+            {
+                //将给定实体以“已添加”状态添加到集的基础上下文中，这样一来，当调用 SaveChanges 时，会将该实体插入到数据库中。
+                dal.Employee.Add(emp);
+                //将所有更新保存至dal（将在此上下文中所做的所有更改保存到基础数据库。）
+                dal.SaveChanges();
+            }
+        }
+
+
+        
+        //删除
+        public void DeleteSaveEmployee(int id)
+        {
+            using (SalesERPDAL dal = new SalesERPDAL())
+            {
+                Employee emp = dal.Employee.Find(id);
+                dal.Entry(emp).State = EntityState.Deleted;
+                dal.SaveChanges();
+            }
         }
     }
 }
