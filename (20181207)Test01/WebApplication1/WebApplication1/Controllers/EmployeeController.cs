@@ -14,9 +14,7 @@ namespace WebApplication1.Controllers
         public ActionResult Index()
         {
             EmployeeListViewModel empListModel = new EmployeeListViewModel();
-
-
-
+            
             //将处理过的数据列表送给强视图类型对象
             empListModel.EmployeeViewList = getEmpVmList();
             //获取问候语
@@ -46,7 +44,11 @@ namespace WebApplication1.Controllers
             //跳转到index视图里
             return new RedirectResult("index");
         }
-
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult DeleteEmployee(int id)
         {
             
@@ -56,6 +58,27 @@ namespace WebApplication1.Controllers
             //跳转到index视图里
             return new RedirectResult("/Employee/index");
         }
+
+        public ActionResult UpdateEmployee(int id)
+        {
+            EmployeeBusinessLayer eBL = new EmployeeBusinessLayer();
+            Employee emp = eBL.Query(id);
+            return View(emp);
+        }
+
+        [HttpPost]
+        public ActionResult UpdateSaveEmployee(Employee emp)
+        {
+            EmployeeBusinessLayer eBL = new EmployeeBusinessLayer();
+            eBL.UpdateSaveEmployee(emp);
+            return new RedirectResult("/Employee/index");
+        }
+
+
+
+
+
+
 
 
 
@@ -107,11 +130,11 @@ namespace WebApplication1.Controllers
             int hour = dt.Hour;
             if (hour < 12)
             {
-                greeting = "早上好";
+                greeting = "上午好！";
             }
             else
             {
-                greeting = "中午好";
+                greeting = "下午好！";
             }
             return greeting;
         }

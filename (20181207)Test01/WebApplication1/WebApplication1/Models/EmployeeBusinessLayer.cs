@@ -67,5 +67,25 @@ namespace WebApplication1.Models
                 dal.SaveChanges();
             }
         }
+
+        public Employee Query(int id)
+        {
+            using (SalesERPDAL dal = new SalesERPDAL())
+            {
+                return dal.Employee.Find(id);
+            }
+        }
+
+        //更新
+        public void UpdateSaveEmployee(Employee emp)
+        {
+            using (SalesERPDAL dal = new SalesERPDAL())
+            {
+                
+                dal.Entry(emp).State = EntityState.Modified;
+                dal.SaveChanges();
+
+            }
+        }
     }
 }
