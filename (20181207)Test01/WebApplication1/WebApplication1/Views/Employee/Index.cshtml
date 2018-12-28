@@ -16,7 +16,14 @@
     <p><a href="/Employee/AddNew">新增</a></p>
 
     <div>
+        <form action="/employee/SelectEmployee" method="post">
+            请输入你要检索的内容：<input type="text" name="name">
+            <input type="submit" value="搜索">
+        </form>
+
         <ul>
+
+
             @foreach (var item in Model.EmployeeViewList)
             {
                 <li>

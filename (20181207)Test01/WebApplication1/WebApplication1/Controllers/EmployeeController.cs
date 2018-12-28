@@ -59,6 +59,11 @@ namespace WebApplication1.Controllers
             return new RedirectResult("/Employee/index");
         }
 
+        /// <summary>
+        /// 更新
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult UpdateEmployee(int id)
         {
             EmployeeBusinessLayer eBL = new EmployeeBusinessLayer();
@@ -74,6 +79,13 @@ namespace WebApplication1.Controllers
             return new RedirectResult("/Employee/index");
         }
 
+
+        public ActionResult SelectEmployee(string name)
+        {
+            EmployeeBusinessLayer eBL = new EmployeeBusinessLayer();
+            var queryList = eBL.QuerybyName(name);
+            return View(queryList);
+        }
 
 
 

@@ -56,7 +56,7 @@ namespace WebApplication1.Models
         }
 
 
-        
+
         //删除
         public void DeleteSaveEmployee(int id)
         {
@@ -81,11 +81,25 @@ namespace WebApplication1.Models
         {
             using (SalesERPDAL dal = new SalesERPDAL())
             {
-                
+
                 dal.Entry(emp).State = EntityState.Modified;
                 dal.SaveChanges();
 
             }
         }
+
+        //查询
+        public IEnumerable<Employee> QuerybyName(string name)
+        {
+            using (SalesERPDAL dal = new SalesERPDAL())
+            {
+                // 查询所有包含字符串name的博客
+                var select = dal.Employee.Where(num => num.Name.Contains(name));
+                return select.ToList();
+            }
+        }
+
+
+
     }
 }

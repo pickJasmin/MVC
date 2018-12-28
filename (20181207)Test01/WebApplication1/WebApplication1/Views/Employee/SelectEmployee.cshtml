@@ -1,0 +1,30 @@
+﻿@model IEnumerable<WebApplication1.Models.Employee>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SelectEmployee</title>
+</head>
+<body>
+    <div>
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    姓名：@item.Name &nbsp;&nbsp;&nbsp;
+                    工资：@item.Salary
+                </li>
+            }
+        </ul>
+
+
+
+
+    </div>
+</body>
+</html>
