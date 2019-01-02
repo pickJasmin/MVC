@@ -1,11 +1,12 @@
 ﻿@model WebApplication1.ViewModels.EmployeeListViewModel
 
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/My_Layout.cshtml";
 }
 
-<!DOCTYPE html>
 
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -13,7 +14,10 @@
 </head>
 <body>
     <h2>@Model.UserName,@Model.Greeting</h2>
-    <p><a href="/Employee/AddNew">新增</a></p>
+    <p>
+        @*<a href="/Employee/AddNew">新增</a>*@
+        @Html.ActionLink("新增", "AddNew", "Employee")
+    </p>
 
     <div>
         <form action="/employee/SelectEmployee" method="post">
@@ -21,15 +25,18 @@
             <input type="submit" value="搜索">
         </form>
 
+
+
+
         <ul>
-
-
             @foreach (var item in Model.EmployeeViewList)
             {
                 <li>
                     @item.EmployeeName,@item.EmployeeGrade,@item.EmployeeSalary&nbsp;&nbsp;
-                    <a href="/Employee/DeleteEmployee/@item.EmployeeID">删除</a>&nbsp;&nbsp;
-                    <a href="/Employee/UpdateEmployee/@item.EmployeeID">更新</a>
+                    @*<a href="/Employee/DeleteEmployee/@item.EmployeeID">删除</a>&nbsp;&nbsp;
+                        <a href="/Employee/UpdateEmployee/@item.EmployeeID">更新</a>*@
+                    @Html.ActionLink("删除", "DeleteEmployee", new { id = item.EmployeeID })
+                    @Html.ActionLink("更新", "UpdateEmployee", new { id = item.EmployeeID })
                 </li>
             }
         </ul>

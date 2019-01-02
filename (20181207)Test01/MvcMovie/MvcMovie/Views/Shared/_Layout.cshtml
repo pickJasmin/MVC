@@ -21,9 +21,12 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
+                    @*行为名称/控制器名称*@
                     <li>@Html.ActionLink("主页", "Index", "Home")</li>
                     <li>@Html.ActionLink("关于", "About", "Home")</li>
                     <li>@Html.ActionLink("联系方式", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("电影", "Index", "Movies")</li>
+                    <li><a href="~/movies/index">电影2</a></li>
                 </ul>
             </div>
         </div>
