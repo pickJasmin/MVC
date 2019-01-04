@@ -20,12 +20,12 @@ namespace ContosoUniversity.DAL
             var student = new List<Student> {
                 new Student {Name="张三",EnrollmentDate=DateTime.Parse("2019-1-3")},
                 new Student {Name="张死",EnrollmentDate=DateTime.Parse("2018-12-3")},
-                new Student {Name="张三1",EnrollmentDate=DateTime.Parse("2019-11-2")},
-                new Student {Name="张三2",EnrollmentDate=DateTime.Parse("2018-11-3")},
-                new Student {Name="张三3",EnrollmentDate=DateTime.Parse("2018-11-3")},
-                new Student {Name="张三4",EnrollmentDate=DateTime.Parse("2018-12-23")},
-                new Student {Name="张三5",EnrollmentDate=DateTime.Parse("2018-12-13")},
-                new Student {Name="张三6",EnrollmentDate=DateTime.Parse("2018-12-3")}
+                new Student {Name="李四",EnrollmentDate=DateTime.Parse("2019-11-2")},
+                new Student {Name="黄蓝",EnrollmentDate=DateTime.Parse("2018-11-3")},
+                new Student {Name="蓝色",EnrollmentDate=DateTime.Parse("2018-11-3")},
+                new Student {Name="美景",EnrollmentDate=DateTime.Parse("2018-12-23")},
+                new Student {Name="两三",EnrollmentDate=DateTime.Parse("2018-12-13")},
+                new Student {Name="行列",EnrollmentDate=DateTime.Parse("2018-12-3")}
 
 
             };
