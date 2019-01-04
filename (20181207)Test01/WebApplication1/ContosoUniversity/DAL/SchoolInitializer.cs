@@ -19,10 +19,10 @@ namespace ContosoUniversity.DAL
             //构建学生数据
             var student = new List<Student> {
                 new Student {Name="张三",EnrollmentDate=DateTime.Parse("2019-1-3")},
-                new Student {Name="张死",EnrollmentDate=DateTime.Parse("2018-12-31")},
+                new Student {Name="张死",EnrollmentDate=DateTime.Parse("2018-12-3")},
                 new Student {Name="张三1",EnrollmentDate=DateTime.Parse("2019-11-2")},
-                new Student {Name="张三2",EnrollmentDate=DateTime.Parse("2018-11-30")},
-                new Student {Name="张三3",EnrollmentDate=DateTime.Parse("2018-11-31")},
+                new Student {Name="张三2",EnrollmentDate=DateTime.Parse("2018-11-3")},
+                new Student {Name="张三3",EnrollmentDate=DateTime.Parse("2018-11-3")},
                 new Student {Name="张三4",EnrollmentDate=DateTime.Parse("2018-12-23")},
                 new Student {Name="张三5",EnrollmentDate=DateTime.Parse("2018-12-13")},
                 new Student {Name="张三6",EnrollmentDate=DateTime.Parse("2018-12-3")}
@@ -30,7 +30,7 @@ namespace ContosoUniversity.DAL
 
             };
             //将学生数据加入实体集(context上下文，名字由自己定义)
-            student.ForEach(st => context.Students.Add(st));
+            student.ForEach(s => context.Students.Add(s));
             context.SaveChanges();
 
             //构建课程数据
@@ -66,7 +66,7 @@ namespace ContosoUniversity.DAL
             new Enrollment{StudentID=7,CourseID=3141,Grade=Grade.A},
             };
             //将注册数据加入实体集
-            enrollments.ForEach(em => context.Enrollments.Add(em));
+            enrollments.ForEach(s => context.Enrollments.Add(s));
             context.SaveChanges();
         }
     }

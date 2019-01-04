@@ -14,7 +14,7 @@ namespace ContosoUniversity.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int CourseID { get; set; }
         public string Title { get; set; }
-        
+
         public int Credits { get; set; }//学分
 
         public virtual ICollection<Enrollment> Enrollments { get; set; }
