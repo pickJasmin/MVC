@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMovie.csproj", "{C713AF33-D714-403A-BEF4-78CA7C568DE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversity", "ContosoUniversity\ContosoUniversity.csproj", "{148FA68F-E2C8-4760-929D-727D8DD90A01}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversity", "ContosoUniversity\ContosoUniversity.csproj", "{D0F70BE2-EB3D-4D59-9F07-31535026618E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{C713AF33-D714-403A-BEF4-78CA7C568DE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C713AF33-D714-403A-BEF4-78CA7C568DE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C713AF33-D714-403A-BEF4-78CA7C568DE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{148FA68F-E2C8-4760-929D-727D8DD90A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{148FA68F-E2C8-4760-929D-727D8DD90A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{148FA68F-E2C8-4760-929D-727D8DD90A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{148FA68F-E2C8-4760-929D-727D8DD90A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

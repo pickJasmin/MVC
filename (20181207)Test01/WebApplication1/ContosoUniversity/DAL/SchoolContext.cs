@@ -11,7 +11,7 @@ namespace ContosoUniversity.DAL
     /// <summary>
     /// 上下文类
     /// </summary>
-    public class SchoolContext:DbContext
+    public class SchoolContext : DbContext
     {
 
         public SchoolContext() : base("SchoolContext")
