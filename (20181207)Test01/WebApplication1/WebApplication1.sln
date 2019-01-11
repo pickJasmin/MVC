@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcMovie", "MvcMovie\MvcMov
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContosoUniversity", "ContosoUniversity\ContosoUniversity.csproj", "{D0F70BE2-EB3D-4D59-9F07-31535026618E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication2", "ConsoleApplication2\ConsoleApplication2.csproj", "{5C5F2A34-5797-4FF1-AE0F-BEF3234D6733}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D0F70BE2-EB3D-4D59-9F07-31535026618E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C5F2A34-5797-4FF1-AE0F-BEF3234D6733}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C5F2A34-5797-4FF1-AE0F-BEF3234D6733}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C5F2A34-5797-4FF1-AE0F-BEF3234D6733}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C5F2A34-5797-4FF1-AE0F-BEF3234D6733}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
